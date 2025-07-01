@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Csomor.CrazyString</RootNamespace>
+	<PackageId>Csomor.CrazyString</PackageId>
+	<PackageVersion>1.0.0-alpha</PackageVersion>
+	<PackageReleaseNotes>Initial alpha release of the CrazyString NuGet package.</PackageReleaseNotes>
+	<Authors>Csomor Tamás</Authors>
+	<Description>A crazy amount of string utilities for all kinds of applications.</Description>
+	<Product>CrazyString</Product>
+	<PackageTags>string strings utility utilities csomor tamas crazy str</PackageTags>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+	 <None Include="docs\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
