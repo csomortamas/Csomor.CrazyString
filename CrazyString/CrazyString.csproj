@@ -6,8 +6,8 @@
     <Nullable>enable</Nullable>
     <RootNamespace>Csomor.CrazyString</RootNamespace>
 	<PackageId>Csomor.CrazyString</PackageId>
-	<PackageVersion>1.0.0-alpha</PackageVersion>
-	<PackageReleaseNotes>Initial alpha release of the CrazyString NuGet package.</PackageReleaseNotes>
+	<PackageVersion>1.0.0</PackageVersion>
+	<PackageReleaseNotes>First release of CrazyString :)</PackageReleaseNotes>
 	<Authors>Csomor Tamás</Authors>
 	<Description>A crazy amount of string utilities for all kinds of applications.</Description>
 	<Product>CrazyString</Product>
