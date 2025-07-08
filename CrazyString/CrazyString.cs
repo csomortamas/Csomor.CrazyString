@@ -1,9 +1,9 @@
 ﻿using System.Text;
 
-namespace Csomor.CrazyString
+namespace Csomor.CrazyString.Utilities
 {
     public static class CrazyString
-    {   
+    {
         /// <summary>
         /// Converts a specified portion of the input string to uppercase using invariant culture.
         /// </summary>
@@ -26,7 +26,7 @@ namespace Csomor.CrazyString
                 length = input.Length - startIndex;
 
             // if length is negative, it means we want to go backwards from the end
-            if (length < 0) 
+            if (length < 0)
                 length = input.Length + length - startIndex;
 
             // if startIndex is negative, it means we want to go backwards from the end
@@ -233,11 +233,11 @@ namespace Csomor.CrazyString
         /// <param name="input">The string to reverse. Cannot be <see langword="null"/>.</param>
         /// <returns>A new string with the characters in <paramref name="input"/> reversed.</returns>
         public static string Reverse(this string input)
-        { 
+        {
             return new string(input.ToCharArray().Reverse().ToArray());
         }
-    
-        
+
+
         /// <summary>
         /// Pads the input string with the specified character on both sides.
         /// </summary>
@@ -393,6 +393,50 @@ namespace Csomor.CrazyString
                 repeated += input.Substring(0, remainder);
 
             return repeated;
-        }    
+        }
+
+
+        /// <summary>
+        /// Hides the content of the input string by replacing each character with an asterisk (*).
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static string Hide(this string input)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input), "Input string cannot be null.");
+            if (input.Length == 0)
+                return string.Empty;
+            StringBuilder stringBuilder = new StringBuilder(input.Length);
+            for (int i = 0; i < input.Length; i++)
+            {
+                stringBuilder.Append('*');
+            }
+
+            return stringBuilder.ToString();
+        }
+
+
+        /// <summary>
+        /// Hides the content of the input string by replacing each character with a specified character.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="hideChar"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static string Hide(this string input, char hideChar)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input), "Input string cannot be null.");
+            if (input.Length == 0)
+                return string.Empty;
+            StringBuilder stringBuilder = new StringBuilder(input.Length);
+            for (int i = 0; i < input.Length; i++)
+            {
+                stringBuilder.Append(hideChar);
+            }
+            return stringBuilder.ToString();
+        }
     }
 }

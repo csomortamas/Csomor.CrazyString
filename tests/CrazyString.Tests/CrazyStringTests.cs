@@ -1,4 +1,4 @@
-﻿using Csomor.CrazyString;
+﻿using Csomor.CrazyString.Utilities;
 
 namespace CrazyString.Tests
 {
@@ -516,6 +516,51 @@ namespace CrazyString.Tests
         }
 
         #endregion
+
+        #region Hide Tests
+
+        [Fact]
+        public void Hide_ReplacesAllCharactersWithAsterisk()
+        {
+            string input = "Secret123!";
+            string result = input.Hide();
+            Assert.Equal("**********", result);
+        }
+
+        [Fact]
+        public void Hide_EmptyString_ReturnsEmptyString()
+        {
+            string input = "";
+            string result = input.Hide();
+            Assert.Equal(string.Empty, result);
+        }
+
+        [Fact]
+        public void Hide_WithCustomChar_ReplacesAllCharactersWithCustomChar()
+        {
+            string input = "Password";
+            string result = input.Hide('#');
+            Assert.Equal("########", result);
+        }
+
+        [Fact]
+        public void Hide_WithCustomChar_EmptyString_ReturnsEmptyString()
+        {
+            string input = "";
+            string result = input.Hide('x');
+            Assert.Equal(string.Empty, result);
+        }
+
+        [Fact]
+        public void Hide_WithCustomChar_UnicodeChar()
+        {
+            string input = "abc";
+            string result = input.Hide('★');
+            Assert.Equal("★★★", result);
+        }
+
+        #endregion
+
     }
 }
 
